@@ -33,8 +33,8 @@ on:
         type: boolean
 
 env:
-  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
-  #REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
+  #REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   FREE_DISK_SH: scripts/free_disk_space.sh
   ENV_SH: scripts/environment.sh
   DIY_SH: scripts/diy.sh
@@ -55,7 +55,7 @@ jobs:
     - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
-      run:
+      run: |
         echo "USE_MTWIFI_CFG=${{ github.event.inputs.USE_MTWIFI_CFG }}" >> $GITHUB_ENV
         echo "USE_NX30PRO_EEPROM=${{ github.event.inputs.USE_NX30PRO_EEPROM }}" >> $GITHUB_ENV
         echo "USE_52MHZ=${{ github.event.inputs.USE_52MHZ }}" >> $GITHUB_ENV
